@@ -42,7 +42,7 @@ RUN DUMMY=${DUMMY}; \
   elif [ "$app" = "Garmin" ] ; then \
   python3 run_page/garmin_sync.py ${email} ${password}; \
   elif [ "$app" = "Garmin-CN" ] ; then \
-  python3 run_page/garmin_sync.py ${secret_string} --only-run --is-cn ; \
+  python3 run_page/garmin_sync.py ${secret_string} --is-cn ; \
   elif [ "$app" = "Strava" ] ; then \
   python3 run_page/strava_sync.py ${client_id} ${client_secret} ${refresh_token};\
   elif [ "$app" = "Nike_to_Strava" ] ; then \

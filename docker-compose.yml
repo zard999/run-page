@@ -1,0 +1,11 @@
+version: '1'
+services:
+  running-page:
+    image: running_page:latest
+    container_name: running_page
+    restart: always
+    ports:
+      - 5555:80
+    tty: true
+    stdin_open: true
+    
