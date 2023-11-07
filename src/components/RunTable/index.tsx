@@ -1,3 +1,13 @@
+/*
+ * @Author: zyh
+ * @Date: 2023-11-07 14:15:01
+ * @LastEditors: zyh
+ * @LastEditTime: 2023-11-07 14:24:49
+ * @FilePath: /run-page/src/components/RunTable/index.tsx
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by 穿越, All Rights Reserved. 
+ */
 import React, { useState } from 'react';
 import {
   sortDateFunc,
@@ -63,6 +73,7 @@ const RunTable = ({
     setSortFuncInfo(sortFuncInfo === funcName ? '' : funcName);
     setActivity(runs.sort(f));
   };
+  console.log('sortFuncMap', runs );
 
   return (
     <div className={styles.tableContainer}>
