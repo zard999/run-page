@@ -1,3 +1,13 @@
+/*
+ * @Author: zyh
+ * @Date: 2023-11-07 11:27:01
+ * @LastEditors: zyh
+ * @LastEditTime: 2023-11-07 11:35:51
+ * @FilePath: \running_page\src\static\site-metadata.ts
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by 穿越, All Rights Reserved. 
+ */
 interface ISiteMetadataResult {
   siteTitle: string;
   siteUrl: string;
@@ -10,18 +20,18 @@ interface ISiteMetadataResult {
 }
 
 const data: ISiteMetadataResult = {
-  siteTitle: 'Running Page',
-  siteUrl: 'https://yihong.run',
+  siteTitle: 'Zard Running Page',
+  siteUrl: 'http://run.pointfree.cn',
   logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
   description: 'Personal site and blog',
   navLinks: [
     {
       name: 'Blog',
-      url: 'https://github.com/yihong0618/gitblog',
+      url: 'https://www.pointfree.cn',
     },
     {
       name: 'About',
-      url: 'https://github.com/yihong0618/running_page/blob/master/README-CN.md',
+      url: 'https://www.pointfree.cn/about',
     },
   ],
 };

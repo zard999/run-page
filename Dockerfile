@@ -30,6 +30,7 @@ ARG client_id
 ARG client_secret
 ARG refresh_token
 ARG YOUR_NAME
+ARG secret_string
 
 WORKDIR /root/running_page
 COPY . /root/running_page/
@@ -41,7 +42,7 @@ RUN DUMMY=${DUMMY}; \
   elif [ "$app" = "Garmin" ] ; then \
   python3 run_page/garmin_sync.py ${email} ${password}; \
   elif [ "$app" = "Garmin-CN" ] ; then \
-  python3 run_page/garmin_sync.py ${email} ${password}  --is-cn ; \
+  python3 run_page/garmin_sync.py ${secret_string} --is-cn ; \
   elif [ "$app" = "Strava" ] ; then \
   python3 run_page/strava_sync.py ${client_id} ${client_secret} ${refresh_token};\
   elif [ "$app" = "Nike_to_Strava" ] ; then \
@@ -61,4 +62,5 @@ RUN pnpm run build
 
 FROM nginx:alpine AS web
 COPY --from=frontend-build /root/running_page/public /usr/share/nginx/html/
-COPY --from=frontend-build /root/running_page/assets /usr/share/nginx/html/assets
+COPY --from=frontend-build /root/running_page/dist /usr/share/nginx/html/
+##COPY --from=frontend-build /root/running_page/assets /usr/share/nginx/html/assets
