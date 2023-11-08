@@ -2,7 +2,7 @@
  * @Author: zyh
  * @Date: 2023-11-07 11:27:01
  * @LastEditors: zyh
- * @LastEditTime: 2023-11-07 11:35:51
+ * @LastEditTime: 2023-11-08 11:54:27
  * @FilePath: \running_page\src\static\site-metadata.ts
  * @Description: 
  * 
@@ -20,7 +20,7 @@ interface ISiteMetadataResult {
 }
 
 const data: ISiteMetadataResult = {
-  siteTitle: 'Zard Running Page',
+  siteTitle: 'Running Page',
   siteUrl: 'http://run.pointfree.cn',
   logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
   description: 'Personal site and blog',

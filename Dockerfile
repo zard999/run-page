@@ -50,8 +50,8 @@ RUN DUMMY=${DUMMY}; \
   else \
   echo "Unknown app" ; \
   fi
-RUN python3 run_page/gen_svg.py --from-db --title "my running page" --type grid --athlete "$YOUR_NAME" --output assets/grid.svg --min-distance 10.0 --special-color yellow --special-color2 red --special-distance 20 --special-distance2 40 --use-localtime \
-  && python3 run_page/gen_svg.py --from-db --title "my running page" --type github --athlete "$YOUR_NAME" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github.svg --use-localtime --min-distance 0.5 \
+RUN python3 run_page/gen_svg.py --from-db --title "Zard999's Running Record" --type grid --athlete "Zard999" --output assets/grid.svg --min-distance 10.0 --special-color yellow --special-color2 red --special-distance 20 --special-distance2 40 --use-localtime \
+  && python3 run_page/gen_svg.py --from-db --title "Over 5km Runs" --type github --athlete "Zard999" --special-distance 5 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github.svg --use-localtime --min-distance 5 \
   && python3 run_page/gen_svg.py --from-db --type circular --use-localtime
 
 

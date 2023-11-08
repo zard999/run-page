@@ -1,7 +1,17 @@
+/*
+ * @Author: zyh
+ * @Date: 2023-11-07 11:27:01
+ * @LastEditors: zyh
+ * @LastEditTime: 2023-11-08 13:48:35
+ * @FilePath: \running_page\src\components\YearsStat\index.tsx
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by 穿越, All Rights Reserved. 
+ */
 import React from 'react';
 import YearStat from '@/components/YearStat';
 import useActivities from '@/hooks/useActivities';
-import { INFO_MESSAGE } from '@/utils/const';
+import { INFO_MESSAGE, INFO_MESSAGE2, INFO_MESSAGE3 } from '@/utils/const';
 
 const YearsStat = ({ year, onClick }: { year: string, onClick: (_year: string) => void }) => {
   const { years } = useActivities();
@@ -18,6 +28,11 @@ const YearsStat = ({ year, onClick }: { year: string, onClick: (_year: string) =
         <p style={{ lineHeight: 1.8 }}>
           {INFO_MESSAGE(years.length, year)}
           <br />
+          <br />
+          {INFO_MESSAGE2}
+          <br />
+           {/* style="font-weight: bold; text-align: right;" */}
+          <p className="b tr">{INFO_MESSAGE3}</p>
         </p>
       </section>
       <hr color="red" />
