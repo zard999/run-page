@@ -35,6 +35,10 @@ ARG secret_string
 WORKDIR /root/running_page
 COPY . /root/running_page/
 ARG DUMMY=unknown
+
+# 在这里添加一个随机文件，以触发重新构建
+ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" /root/running_page/random
+
 RUN DUMMY=${DUMMY}; \
   echo $app ; \
   if [ "$app" = "NRC" ] ; then \
