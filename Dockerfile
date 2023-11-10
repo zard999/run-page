@@ -36,9 +36,8 @@ WORKDIR /root/running_page
 COPY . /root/running_page/
 ARG DUMMY=unknown
 
-# 在这里添加一个随机文件，以触发重新构建
-ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" /root/running_page/random
-
+## 创建一个test文件又立马删除，触发重新更新
+RUN echo 'test1' > test && rm test
 RUN DUMMY=${DUMMY}; \
   echo $app ; \
   if [ "$app" = "NRC" ] ; then \
@@ -62,6 +61,9 @@ RUN python3 run_page/gen_svg.py --from-db --title "Over 5km Runs" --type grid --
 FROM develop-node AS frontend-build
 WORKDIR /root/running_page
 COPY --from=data /root/running_page /root/running_page
+
+## 创建一个test文件又立马删除，触发重新更新
+RUN echo 'test1' > test && rm test
 RUN pnpm run build
 
 FROM nginx:alpine AS web
